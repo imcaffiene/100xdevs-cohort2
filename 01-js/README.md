@@ -1,18 +1,17 @@
-## JavaScript Assignments
+# Compiled Language vs Interpreted Language
 
-You are provided empty JavaScript files (or having function signatures) in this directory. 
-You have to follow the instructions given in each file and write the code in the same file to complete the assignment.
+### Compiled Language
+1. First need to compile the code then execute it.
+2. Compiled language is faster than interpreted language because it is compiled first.
+3. Usually don't compile if there is an error in the code.
+4. e.g. C, C++, C#, Java, Go, Rust, Swift, etc.
 
-### Assignments
-Feel free to start doing these in any order you like.
-1. Easy
-2. Medium
-3. Hard
+### Interpreted Language
+1. Usually interpreted language is executed line by line.
+2. Interpreted language is slower than compiled language because it is executed line by line.
+3. Can execute the code even if there is an error in the code.
+4. e.g. JavaScript, Python, Ruby, PHP, etc.
 
-## Testing
-1. Follow the comment above each problem to run test for that problem
-3. To tests for all the problems of this week run ```npx jest ./tests/```
-
-#### Development Setup
-1. If you have Node.js locally, you should run these on your machine 
-2. If you don't, you can copy these over to repl.it and run it there. Tests wont be automated there so you will have to make use judgement to ensure if your code is correct
+# Why Js is better than other languages
+# Strict vs Dynamic language
+# Single Threaded vs Multi Threaded
