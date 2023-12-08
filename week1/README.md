@@ -15,3 +15,6 @@
 # Why Js is better than other languages
 # Strict vs Dynamic language
 # Single Threaded vs Multi Threaded
+# callback function
+# advantage of callback function
+
