@@ -1,5 +1,3 @@
-# Compiled Language vs Interpreted Language
-
 ### Compiled Language
 1. First need to compile the code then execute it.
 2. Compiled language is faster than interpreted language because it is compiled first.
