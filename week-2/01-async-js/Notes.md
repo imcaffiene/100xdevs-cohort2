@@ -45,5 +45,3 @@ api.createOrder(cars, function(){
     - We can use async/await to write synchronous looking code.
 
 
-
-
