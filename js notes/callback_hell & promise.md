@@ -1,4 +1,3 @@
-# Learning Outcomes
 
 ### Difference between setTimeout and setInterval
 - setTimeout will only run once
@@ -11,6 +10,8 @@
     - We can call a function when an another function finishes it's execution.
     - We can pass a function as an argument to another function.
     - We can create a function inside another function.
+
+- For example : If we have to create an ecommerce website and we have to create an order, proceed to payment, pay and deliver the product. We can use callback function to do this, because we can't proceed to payment until we create an order, we can't pay until we proceed to payment and we can't deliver until we pay for the product.
 
 ```js
 const cars = ['ferrari', 'lambo', 'porsche', 'tesla'];
@@ -25,6 +26,7 @@ api.createOrder(cars, function(){
     })
 })
 ```
+
 - So this is a callback hell, and it's not good. Callback hell is when you have a lot of nested callbacks, and it's hard to read and maintain.
 
 - After callback hell our code starts horizontally instead of vertically and because of this structure it is also called pyramid of doom, because it looks like a pyramid.
