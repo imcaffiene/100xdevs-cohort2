@@ -71,7 +71,7 @@ function detectWallets() {
     if (window.ethereum.isCoinbaseWallet) wallets.push('Coinbase');
   }
 
-  // Solana Wallets
+  // Solana Wallets 
   if (window.phantom?.solana) wallets.push('Phantom');
   if (window.solflare) wallets.push('Solflare');
 
@@ -79,6 +79,24 @@ function detectWallets() {
 }
 ```
 
+## What is Message Signing?
 
+### How It Works  
+1. You create a message (e.g., "Login request").  
+2. Your wallet hashes it + signs with your **private key**.  
+3. Generates a **signature** (verifiable by your public address).  
 
+### Use Cases  
+- **dApp logins** (e.g., "Sign-In with Ethereum").  
+- **NFT ownership proofs**.  
+- **Smart contract approvals**.  
 
+### Risks  
+- **Phishing**: Malicious messages can drain wallets.  
+- **Always**: Read full message before signing!  
+
+- `Signing` ≠ `Sending`: It’s proof, not a transaction.
+
+- `Used` for: Authentication, approvals, and verification.
+
+https://petal-estimate-4e9.notion.site/Wallet-adapter-860feade9cb940cea696eedf4fc61251
