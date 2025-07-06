@@ -180,7 +180,7 @@ For Contract Accounts (smart contracts), the nonce has a different meaning:
 
 - `World State`: The global, single source of truth for all account balances, contract code, and contract storage on the Ethereum blockchain. The EVM's primary role is to transition this state.
 
-` Q. why it's caled state machine not database`
+` Q. why it's called state machine not database`
 
 #### 1. "Database" Analogy:
 
@@ -212,8 +212,42 @@ For Contract Accounts (smart contracts), the nonce has a different meaning:
 
 #### `Why "State Machine" is better than "Database":`
 
-- It emphasizes the rules for change: A database stores data. A state machine emphasizes the process of moving from one valid data configuration (state) to another valid data configuration, only according to its defined rules.
+- `It emphasizes the rules for change`: A database stores data. A state machine emphasizes the process of moving from one valid data configuration (state) to another valid data configuration, only according to its defined rules.
 
-- It highlights the deterministic nature: Given the same starting "picture" and the same "instructions," the robot brain will always create the exact same next "picture." There's no guesswork.
+- `It highlights the deterministic nature`: Given the same starting "picture" and the same "instructions," the robot brain will always create the exact same next "picture." There's no guesswork.
 
-- It implies a continuous, linked history: You can always look at the chain of "pictures" to see exactly how the spreadsheet got to its current form, and every step is verified.
+- `It implies a continuous, linked history`: You can always look at the chain of "pictures" to see exactly how the spreadsheet got to its current form, and every step is verified.
+
+## OPCODE
+
+#### Take a look : [evm.code](evm.codes)
+
+#### Each part of the bytecode represents an opcode, which stands for "operation code." Opcodes are the individual instructions that tell the EVM what to do. Examples of opcodes include basic operations like:
+
+- Arithmetic (e.g., addition or subtraction),
+- Data manipulation (e.g., storing and retrieving data),
+- Control flow (e.g., jump to different parts of the code based on conditions).
+
+#### Execution in the EVM: When a smart contract is deployed or executed, the EVM reads the bytecode one opcode at a time, following each instruction to carry out the actions coded in the smart contract.
+
+`In simple terms, opcodes are like commands in a recipe for the EVM, telling it exactly what steps to take, one at a time, to carry out the smart contract's functions.`
+
+## ABIS
+
+- In Ethereum, an ABI (Application Binary Interface) is like a “translation guide” that allows applications and users to interact with smart contracts. Here’s how it works in simple terms:
+  - `Purpose of ABI`: When a smart contract is deployed on the Ethereum blockchain, it operates using bytecode that the Ethereum Virtual Machine (EVM) can understand. However, people and external applications need a way to communicate with this contract — for example, to call its functions or read its data. The ABI defines how this communication happens.
+    - `Defining Contract Functions`: The ABI includes details about the contract's functions, specifying:
+      - The names of the functions,
+      - The types of inputs each function requires,
+      - The types of outputs (if any) it returns.
+      - This makes it clear for any application or user interface how to call specific functions on the contract.
+    - `Encoding and Decoding Data`:
+      - When an application sends data to the smart contract (like calling a function), the ABI tells it how to encode this data into the proper format.
+      - When the contract sends data back (like returning a result), the ABI tells the application how to decode this data.
+    - `Practical Example`:
+      - Let’s say there’s a smart contract that has a function to check a user’s balance. The ABI would specify that to call the “checkBalance” function, you need to provide the user’s address as input, and it will return a number (the balance) as output.
+      - An application, such as a wallet, would use the ABI to correctly format the call to “checkBalance” and understand the response.
+
+`In simple terms, the ABI is a map that explains how to interact with a smart contract, making sure data is sent and received in the right way so applications and users can work with the contract accurately.`
+
+![alt text](image-1.png)
