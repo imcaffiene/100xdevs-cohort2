@@ -1,97 +1,68 @@
-// https://petal-estimate-4e9.notion.site/Rust-for-Solana-contracts-1937dfd1073580c8a8fbc7e135e6d22a
-
 fn main() {
-    // let ans: i32 = sum(1, 2);
-    // println!("The sum is {}", ans);
+    //----------------borrowing and references------
 
-    // println!("Is even {}", is_even(1));
+    // let mut s = String::from("sumit");
+    // print_length(&s); // ----> Immutable ref
+    // println!("Real:{}", s);
 
-    // let name = String::from("Sumit");
-    // println!("Hello {}", name);
+    // changes(&mut s); // ---> mut ref
+    // println!("modified: {}", s);
 
-    // let v = vec![1, 2, 3];
-    // println!("The vector is {:?}", v);
+    // --------------Struct -------------
+    // get_user();
 
-    // create_str();
-
-    /*
-    let s1 = String::from("Sumit");
-
-    let len = get_length(&s1); //
-
-    println!("The length of the string is {}", len);
-
-    println!("The string is {}", s1);  ---> now this is working
-
-     println!("{}", str) ---> because now the ownership is moved to get_length
-     */
-
-    get_fun();
-
-    get_sumit();
+    // -------------- enums -------------
+    get_direction();
 }
 
+//---------------- borrowing and references------
 /*
-fn sum(a: i32, b: i32) -> i32 {
-    return a + b;
-}*/
+fn print_length(s: &String) {
+    println!("Length:{}", s.len())
+}
 
-// boolean
-/*
-fn is_even(a: i32) -> bool {
-    return a % 2 == 0;
+fn changes(s: &mut String) {
+    s.push_str("kumar");
 }
 */
 
-//--------------- ownership rules ---------------
-/*
-fn create_str() {
-    let mut name = String::from("Sumit");
-
-    //let name2 = name; // ownership rule came here
-
-    name.push_str("Kumar");
-
-    println!("name is {}", name)
-}
-*/
-
-//--------------- borrowing  ---------------
+// ----- struct --------
 
 /*
-fn get_length(s2: &String) -> usize {
-    return s2.len();
-}
-
-*/
-
-fn get_fun() {
-    let mut s1 = String::from("Sumit");
-    let s2 = &mut s1;
-    //let s3 = &s1; // can't mut more than once
-
-    s2.push_str("Kumar");
-
-    println!("{}", s2);
-}
-
-// --------------structs ---------------
-#[derive(Debug)]
-struct Sumit {
-    active: bool,
+struct User {
     username: String,
     email: String,
-    age: u8,
-    sign_in_count: u32,
+    active: bool,
+    sign_in_count: u64,
 }
 
-fn get_sumit() {
-    let user1 = Sumit {
+// instance
+fn get_user() {
+    let mut user1 = User {
+        username: String::from("sumit"),
+        email: String::from("smtkur31@gmail.com"),
         active: true,
-        username: String::from("imcaffiene"),
-        email: String::from("imcaffiene@gmail.com"),
-        age: 25,
-        sign_in_count: 1,
+        sign_in_count: 12,
     };
-    println!("{:?}", user1);
+    println!("Username:{}", user1.username);
+    println!("email:{}", user1.email);
+    println!("is_active:{}", user1.active);
+    println!("xyz:{}", user1.sign_in_count);
+
+    user1.email = String::from("imcaffiene@gmail.com");
+
+    println!("Updated email: {}", user1.email);
+
+    // let user2 = User {
+    //     username: String::from("punit"),
+    //     active: user1.active,
+    //     email: String::from("punit@gmail.com"),
+    //     sign_in_count: user1.sign_in_count,
+    // };
+
+    // println!("next Username:{}", user2.username);
+    // println!(" next email:{}", user2.email);
+    // println!("next is_active:{}", user2.active);
+    // println!(" next xyz:{}", user2.sign_in_count);
 }
+*/

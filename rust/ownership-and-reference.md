@@ -251,7 +251,7 @@ s1 = data, s2 = data
 
 ---
 
-## 🛑 Summary
+### 🛑 Summary
 
 | Concept              | Owned? | Can Reuse After Move? | Can Clone It? |
 | -------------------- | ------ | --------------------- | ------------- |
@@ -260,13 +260,15 @@ s1 = data, s2 = data
 
 ---
 
-## ✅ Ownership in a Nutshell
+### ✅ Ownership in a Nutshell
 
 | Rule | Description                                                               |
 | ---- | ------------------------------------------------------------------------- |
 | 1️⃣   | Each value has only one owner.                                            |
 | 2️⃣   | On assignment or function-passing, ownership **moves**.                   |
 | 3️⃣   | When the owner goes out of scope, the value is **dropped** automatically. |
+
+---
 
 ## 🔄 Borrowing and References in Rust (with examples)
 
@@ -276,7 +278,7 @@ Borrowing is central to Rust's **ownership system** and helps prevent issues lik
 
 ---
 
-## 🧠 What are References?
+### 🧠 What are References?
 
 A **reference** allows you to refer to a value **without taking ownership**. You create a reference using `&`.
 
@@ -287,7 +289,7 @@ There are two types:
 
 ---
 
-## ✅ Immutable Borrowing (`&T`)
+### ✅ Immutable Borrowing (`&T`)
 
 - Multiple immutable references **are allowed at the same time**.
 - The original value **cannot be modified** via immutable references.
@@ -316,7 +318,7 @@ Original: rustacean
 
 ---
 
-## ✏️ 2. Mutable References (`&mut T`)
+### ✏️ 2. Mutable References (`&mut T`)
 
 You can only have **one mutable reference** to a piece of data at a time.
 
@@ -344,7 +346,7 @@ Modified: hello, world!
 
 ---
 
-## ⚠️ 3. Borrowing Rules
+### ⚠️ 3. Borrowing Rules
 
 | 🛡️ Rule | Explanation                                 |
 | ------- | ------------------------------------------- |
